@@ -9,11 +9,11 @@
 import UIKit
 import SceneKit
 
-class MagixView: UIView, SCNSceneRendererDelegate{
+public class MagixView: UIView, SCNSceneRendererDelegate{
     
     //    MARK: Properties
     
-    var image: UIImage?{
+    public var image: UIImage?{
         didSet{
             if let image = image {
                 setupSphere(image: image)
@@ -51,7 +51,7 @@ class MagixView: UIView, SCNSceneRendererDelegate{
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
     
@@ -136,7 +136,7 @@ class MagixView: UIView, SCNSceneRendererDelegate{
         scene.rootNode.addChildNode(sphereNode)
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {  [weak self] () -> Void in
             guard let strongSelf = self else{
                 return
