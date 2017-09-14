@@ -46,7 +46,7 @@ extension CMDeviceMotion
      
      - returns: The SCNQuaternion representation of the CMDeviceMotion's attitude quaternion.
      */
-    func gaze(atOrientation orientation: UIInterfaceOrientation) -> SCNQuaternion
+    open func gaze(atOrientation orientation: UIInterfaceOrientation) -> SCNQuaternion
     {
         let scnQuaternion: SCNQuaternion
         
