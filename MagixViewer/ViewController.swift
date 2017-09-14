@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     
     func pyaKyiKyi(){
         let panoView = MagixViewController()
+        panoView.image = UIImage(named: "brownstone.jpg")
         self.present(panoView, animated: true, completion: nil)
     }
 

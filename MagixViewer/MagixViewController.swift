@@ -11,11 +11,21 @@ import SceneKit
 
 open class MagixViewController: UIViewController{
     
+    open var image: UIImage? {
+        didSet{
+            guard let image = self.image else {
+                return
+            }
+            
+            panoView.image = image
+        }
+    }
+    
     var panoView : MagixView = {
         let view = MagixView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
-        view.image = UIImage(named: "brownstone.jpg")
+//        view.image = UIImage(named: "brownstone.jpg")
         return view
     }()
     

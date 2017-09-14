@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name			= 'MagixViewer'
-	s.version		= '0.1.3'
+	s.version		= '0.1.4'
 	s.summary		= '360 viewer'
 	s.homepage		= 'https://github.com/HsuYee/MagixViewer'
 	s.license		= { :type => 'MIT', :file => 'LICENSE' }
