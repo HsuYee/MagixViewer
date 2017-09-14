@@ -62,6 +62,10 @@ class MagixView: UIView, SCNSceneRendererDelegate{
     }
     
     func setupScene(){
+        leftSceneView.showsStatistics = true
+        rightSceneView.showsStatistics = true
+        mainSceneView.showsStatistics = true
+        
         leftSceneView.translatesAutoresizingMaskIntoConstraints = false
         rightSceneView.translatesAutoresizingMaskIntoConstraints = false
         mainSceneView.translatesAutoresizingMaskIntoConstraints = false

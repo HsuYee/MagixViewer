@@ -56,29 +56,30 @@ extension CMDeviceMotion
         switch orientation
         {
         case .landscapeRight:
-            let radians = Float(M_PI_2)
-            let multiplier = GLKQuaternionMakeWithAngleAndAxis(radians, 0, 1, 0) // Rotate 90 degrees around the Y axis
+//            let radians = Float(Double.pi / 2)
+            let radians = Double.pi / 2
+            let multiplier = GLKQuaternionMakeWithAngleAndAxis(Float(radians), 0, 1, 0) // Rotate 90 degrees around the Y axis
             let q = GLKQuaternionMultiply(multiplier, glQuaternion)
             
             scnQuaternion = SCNQuaternion(x: -q.y, y: q.x, z: q.z, w: q.w)
             
         case .landscapeLeft:
-            let radians = -Float(M_PI_2)
-            let multiplier = GLKQuaternionMakeWithAngleAndAxis(radians, 0, 1, 0) // Rotate -90 degrees around the Y axis
+            let radians = Double.pi / 2
+            let multiplier = GLKQuaternionMakeWithAngleAndAxis(-(Float)(radians), 0, 1, 0) // Rotate -90 degrees around the Y axis
             let q = GLKQuaternionMultiply(multiplier, glQuaternion)
             
             scnQuaternion = SCNQuaternion(x: q.y, y: -q.x, z: q.z, w: q.w)
             
         case .portraitUpsideDown:
-            let radians = Float(M_PI_2)
-            let multiplier = GLKQuaternionMakeWithAngleAndAxis(radians, 1, 0, 0) // Rotate 90 degrees around the X axis
+            let radians = Double.pi / 2
+            let multiplier = GLKQuaternionMakeWithAngleAndAxis(Float(radians), 1, 0, 0) // Rotate 90 degrees around the X axis
             let q = GLKQuaternionMultiply(multiplier, glQuaternion)
             
             scnQuaternion = SCNQuaternion(x: -q.x, y: -q.y, z: q.z, w: q.w)
             
         case .portrait, .unknown:
-            let radians = -Float(M_PI_2)
-            let multiplier = GLKQuaternionMakeWithAngleAndAxis(radians, 1, 0, 0) // Rotate -90 degrees around the X axis
+            let radians = Double.pi / 2
+            let multiplier = GLKQuaternionMakeWithAngleAndAxis(-(Float)(radians), 1, 0, 0) // Rotate -90 degrees around the X axis
             let q = GLKQuaternionMultiply(multiplier, glQuaternion)
             
             scnQuaternion = SCNQuaternion(x: q.x, y: q.y, z: q.z, w: q.w)
