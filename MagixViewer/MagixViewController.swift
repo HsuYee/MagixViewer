@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class MagixViewController: UIViewController{
+open class MagixViewController: UIViewController{
     
     var panoView : MagixView = {
         let view = MagixView()
@@ -35,18 +35,18 @@ class MagixViewController: UIViewController{
         return button
     }()
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         UIView.setAnimationsEnabled(false)
         setupView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //        panoView.panoView()
     }
     
-    override var prefersStatusBarHidden: Bool {
+    override open var prefersStatusBarHidden: Bool {
         return true
     }
     
